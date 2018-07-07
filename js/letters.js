@@ -6,20 +6,39 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
 
 var counter = {
-  "a" : 0,  "b" : 0,  "c" : 0,  "d" : 0,
-  "e" : 0,  "f" : 0,  "g" : 0,  "h" : 0,
-  "i" : 0,  "j" : 0,  "k" : 0,  "l" : 0,
-  "m" : 0,  "n" : 0,  "o" : 0,  "p" : 0,
-  "q" : 0,  "r" : 0,  "s" : 0,  "t" : 0,
-  "u" : 0,  "v" : 0,  "w" : 0,  "x" : 0,
-  "y" : 0,  "z" : 0
+  "a": 0, "b": 0, "c": 0, "d": 0,
+  "e": 0, "f": 0, "g": 0, "h": 0,
+  "i": 0, "j": 0, "k": 0, "l": 0,
+  "m": 0, "n": 0, "o": 0, "p": 0,
+  "q": 0, "r": 0, "s": 0, "t": 0,
+  "u": 0, "v": 0, "w": 0, "x": 0,
+  "y": 0, "z": 0
 }
 
-function countLetters(counter, sample_text){
-  // FIX ME
+function countLetters(counter, sample_text) {
+
+  let lowerCase = sample_text.toLowerCase().replace(/[. , ' ']/g, '');
+  let firstChar = lowerCase.charAt(0);
+  let smallerStr = lowerCase.slice(1)
+
+  counter[firstChar]++
+
+  if (smallerStr.length === 0) {
+    return;
+  }
+
+  countLetters(counter, smallerStr);
 }
 
-$(document).ready(function(){
+// for (let i = 0; i < sample_text.length; i++){
+//   for (let key in counter){
+//     if(sample_text[i] === key){
+//       counter[key]++
+//     }
+//   }
+// }
+
+$(document).ready(function () {
   countLetters(counter, sample_text);
   $("#result").html(JSON.stringify(counter));
 });
