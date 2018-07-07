@@ -30,14 +30,6 @@ function countLetters(counter, sample_text) {
   countLetters(counter, smallerStr);
 }
 
-// for (let i = 0; i < sample_text.length; i++){
-//   for (let key in counter){
-//     if(sample_text[i] === key){
-//       counter[key]++
-//     }
-//   }
-// }
-
 $(document).ready(function () {
   countLetters(counter, sample_text);
   $("#result").html(JSON.stringify(counter));
