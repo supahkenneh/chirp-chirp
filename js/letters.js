@@ -17,7 +17,6 @@ var counter = {
 
 function countLetters(counter, sample_text) {
 
-  let lowerCase = sample_text.toLowerCase().replace(/[. , ' ']/g, '');
   let firstChar = lowerCase.charAt(0);
   let smallerStr = lowerCase.slice(1)
 
