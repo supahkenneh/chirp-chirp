@@ -16,12 +16,13 @@ var counter = {
 }
 
 function countLetters(counter, sample_text) {
-
+  
+  
   let firstChar = sample_text.toLowerCase().charAt(0);
   let smallerStr = sample_text.toLowerCase().slice(1)
-
+  
   counter[firstChar]++
-
+  
   if (smallerStr.length === 0) {
     return;
   }
