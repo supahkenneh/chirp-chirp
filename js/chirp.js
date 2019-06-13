@@ -1,5 +1,11 @@
 function chirp(n){
-  // FIX ME
+  let tweet = "chirp ";
+  
+  if (n === 1){
+    return tweet;
+  }
+  
+  return tweet + chirp(n-1);
 }
 
 $(document).ready(function(){
